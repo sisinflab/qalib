@@ -1,0 +1,105 @@
+Per che tipologia di impianti posso utilizzare le centrali MyNice?
+Le centrali MyNice permettono di realizzare impianti residenziali di piccole e medie dimensioni: è possibile associare alla centrale da 1 a 99 rivelatori radio.
+
+La centrale MyNice può essere installata in qualsiasi punto della casa?
+Poiché la centrale di allarme funziona trasmettendo e ricevendo segnali radio da parte dei rivelatori, è opportuno installarla in una posizione centrale rispetto ai dispositivi associati.
+Inoltre, per favorire la comunicazione Wi-Fi, la centrale deve essere installata a circa 1,5 metri di altezza da terra.
+
+Quali rivelatori posso utilizzare per sorvegliare il perimetro dell’edificio?
+È molto importante scegliere con attenzione il tipo di rivelatore da utilizzare in relazione al compito da svolgere. Un rivelatore errato, o posizionato in un luogo inadatto, potrebbe non rilevare un’intrusione oppure segnalare allarmi impropri.
+Per sorvegliare il perimetro dell’edificio è possibile utilizzare diversi rivelatori, ciascuno con funzioni differenti:
+- per rilevare l’apertura di porte e finestre è consigliato l’utilizzo del rivelatore di apertura a contatto magnetico MNMC;
+- per rilevare un’intrusione proveniente dall’esterno e l’attraversamento di una porta o una finestra, è consigliato l’utilizzo del rivelatore ad infrarossi a doppia tenda verticale MNCPIR2;
+- per rilevare i tentativi di intrusione provenienti dall’esterno è consigliato l’utilizzo del rivelatore a doppia tecnologia MNDT o del rivelatore ad infrarossi con fotocamera integrata MNPIRTVCC.
+
+Quali rivelatori posso utilizzare per sorvegliare le aree interne dell’edificio?
+È molto importante scegliere con attenzione il tipo di rivelatore da utilizzare in relazione al compito da svolgere. Un rivelatore errato, o posizionato in un luogo inadatto, potrebbe non rilevare un’intrusione oppure segnalare allarmi impropri.
+Per sorvegliare le aree interne dell’edificio è possibile utilizzare diversi rivelatori, ciascuno con funzioni differenti:
+- per rilevare il movimento delle persone è consigliato l’utilizzo del rivelatore ad infrarossi volumetrico MNPIRPET che, dotato della funzione Pet Immune, permette agli animali da compagnia di piccola taglia di muoversi liberamente in casa anche quando l’allarme è attivo. Nel caso di locali esposti si consiglia l’installazione della versione AA con funzione antiaccecamento;
+- per rilevare la rottura di vetri è consigliato l’utilizzo del rivelatore magnetico di rottura vetri MNGB;
+- per rilevare la presenza di fumo bianco provocato da principi di incendio è consigliato l’utilizzo del rivelatore di fumo MNSD;
+- per rilevare un possibile allagamento è consigliato l’utilizzo del rivelatore di allagamento MNWD.
+
+Quante tastiere radio MNKP possono associare alla centrale MyNice?
+Alla centrale MyNice possono essere associate fino ad un massimo di 4 tastiere radio MNKP per la gestione quotidiana dell’impianto.
+
+Posso gestire la centrale MyNice tramite smartphone, tablet o pc anche se in casa non è presente una rete Wi-Fi?
+Grazie al modulo Wi-Fi integrato, la centrale MyNice funziona anche senza connessione Wi-Fi, in modalità Access Point: in questo modo è possibile gestire la centrale via smartphone, tablet o pc nella sola area di copertura della WLAN.
+
+Posso gestire la centrale MyNice tramite smartphone, tablet o pc anche da remoto?
+Per gestire la centrale MyNice da remoto, è necessario che in casa sia presente una rete Wi-Fi e che la centrale sia configurata in modalità Client.
+Per configurare la centrale in modalità client guarda il video, o vai alla FAQ numero 8.
+
+Come posso configurare la modalità client nella centrale MyNice?
+Per configurare la modalità client nella centrale MyNice guarda il video o esegui in ordine i passaggi descritti di seguito.
+- Clicca sull’icona impostazioni presente nel menù della centrale MyNice.
+- Digita il codice PIN installatore precedentemente impostato e conferma con OK.
+- Seleziona la voce “Scegli il tipo di connessione wi-fi” e, successivamente, seleziona la modalità client: si aprirà la pagina di settaggio della rete.
+- Seleziona la voce “nome rete wireless”: la centrale ricercherà in automatico le reti wi-fi presenti.
+- Scegli la rete wi-fi che desideri utilizzare per la centrale e clicca ok.
+- Successivamente, seleziona la voce “Password wi-fi” e inserisci la password del wi-fi scelto. Terminata l’operazione, premi ok.
+Terminato il settaggio dei parametri appena considerati, dovrai procedere con l’inserimento dell’indirizzo IP.
+- Premi l’icona FRECCIA GIÙ.
+- Per individuare l’indirizzo IP da inserire nella voce “IP centrale” esegui, in ordine, i seguenti passaggi:
+1. Utilizza un PC per connetterti alla rete wi-fi che utilizzerà la centrale MyNice. Nel desktop del PC, seleziona il menu “start”.
+2. Nella barra “Cerca programmi e file” digita CMD: si aprirà il prompt di dos.
+3. Digita “IPCONFIG” e premi invio: si visualizzeranno quindi l’indirizzo IP del PC, la subnet mask e il gateway predefinito.
+4. Inserisci nel campo “subnet mask” della centrale MyNice il valore di subnet mask visualizzato nel PC e premi ok.
+5. Inserisci nel campo “Default gateway” il valore del gateway visualizzato nel PC e premi ok.
+6. Modifica le ultime 3 cifre dell’indirizzo IP del PC inserendo un valore sufficientemente alto, ad esempio superiore di 50 unità, così da consentire a tutti i dispositivi presenti in casa di connettersi alla rete wi-fi.
+7. Verifica che l’indirizzo IP così modificato non sia occupato, digitando “PING” seguito dall’indirizzo IP scelto all’interno del prompt di dos aperto nel PC. Se l’indirizzo IP è libero, comparirà la voce “Host di destinazione non raggiungibile”. In caso contrario sarà necessario individuare un altro indirizzo IP.
+8.Digita nel campo “IP centrale” della centrale MyNice l’indirizzo IP libero. Premi ok.
+Torna alla videata Home della centrale.
+Il wi-fi è stato correttamente configurato nella centrale MyNice.
+Per verificare che la configurazione sia andata a buon fine, osserva che sul display della centrale MyNice compaia l’icona del cloud. Da questo momento sarà quindi possibile gestire la centrale MyNice anche da remoto tramite la app MyNice World, scaricare gli aggiornamenti e operare in telegestione.
+
+Quante automazioni Nice posso associare alla centrale di allarme MyNice?
+Alla centrale di allarme MyNice è possibile associare solo automazioni Nice con codifica Flor, fino ad un massimo di 64.
+
+Come si associa un’automazione Nice alla centrale di allarme MyNice?
+Per associare un’automazione Nice alla centrale MyNice guarda il video, o esegui in ordine i passaggi descritti di seguito.
+Per associare alla centrale MyNice un’automazione, è necessario aver già memorizzato nell’automazione stessa un trasmettitore in modo I.
+- Premi l’icona “impostazioni”.
+- Inserisci il codice installatore e conferma premendo ok.
+- Scorri le diverse voci del menu di programmazione e seleziona “Programma i tuoi dispositivi domotici”.
+- Clicca sulla voce “Automazioni monodirezionali”.
+- Successivamente, clicca sulla voce “seleziona una tipologia” e scegli l’automazione Nice che desideri memorizzare nella centrale MyNice.
+- Una volta scelta la tipologia di automazione premi ok.
+- In seguito, clicca sulla voce “Seleziona un dispositivo” e scegli il codice dell’automazione che desideri memorizzare nella centrale MyNice. Conferma premendo ok.
+- Comparirà quindi la schermata “Associa il dispositivo”.
+- A questo punto prendi il trasmettitore che utilizzi per gestire l’automazione. Premi la voce “Avvia” nello schermo della centrale. Seleziona quindi sul trasmettitore il canale associato all’automazione e premi per 2 volte di seguito il tasto STOP. Attenzione: se desideri memorizzare nella centrale MyNice un’automazione per cancelli o porte da garage premi un tasto qualsiasi del trasmettitore.
+- A conferma della corretta associazione del trasmettitore alla centrale MyNice, quest’ultima emetterà un segnale acustico.
+Per verificare che l’operazione sia andata a buon fine, premi “verifica” sul display della centrale MyNice e invia un comando di prova all’automazione. Se il comando viene correttamente ricevuto conferma con ok.
+La centrale comunicherà di aver memorizzato in modo corretto l’automazione. Premi nuovamente ok.
+L’automazione appena memorizzata nella centrale MyNice comparirà subito anche tra i dispositivi presenti all’interno della app MyNice World.
+Se desideri memorizzare altre automazioni ripeti la procedura appena descritta. In caso contrario clicca sulla voce “Ho finito”.
+
+Come si associa uno smartphone alla centrale MyNice?
+Per associare uno smartphone alla centrale di allarme MyNice guarda il video, o esegui in ordine i passaggi riportati di seguito.
+Dopo aver scaricato sul proprio smartphone la app MyNice World, disponibile per iOS e Android, è possibile associarlo alla centrale MyNice per gestire anche da remoto l’intero sistema.
+Connetti lo smartphone alla stessa rete wi-fi che utilizza la centrale MyNice.
+Nella centrale MyNice abilita l’utente Power User, o altri eventuali utenti creati, alla gestione diretta tramite app.
+Esegui in ordine i seguenti passaggi:
+1. Premi l’icona “impostazioni” nel display della centrale.
+2. Digita il codice installatore e conferma con il tasto ok.
+3. Seleziona la voce “gestione utenti” del menù: si aprirà una videata con tutti gli utenti creati.
+4. Seleziona l’utente da associare alla app, cliccando sull’icona a forma di occhio.
+5. Con l’icona FRECCIA GIÚ spostati nella seconda videata.
+6. Seleziona la voce “Abilitare gestione diretta tramite app”; comparirà una spunta azzurra.
+7. Conferma con ok.
+L’utente è stato correttamente abilitato.
+- Premi l’icona a forma di freccia per tornare indietro.
+- Seleziona la voce “Associazione smartphone” del menù: si aprirà una videata contenente le informazioni da inserire nella schermata di configurazione della app MyNice World.
+- Accedi alla app MyNice World e premi l’icona “impostazioni” in basso a destra.
+- Nella voce “indirizzo locale” della app MyNice World inserisci l’indirizzo IP della centrale MyNice.
+- Nella voce “descrizione” è invece possibile inserire il nome del proprio impianto di allarme.
+- Nella voce “numero di serie” inserisci il numero di serie della centrale MyNice.
+- Nella voce “utente” della app MyNice World inserisci il nome utente precedentemente configurato nella centrale MyNice, rispettando le grandezze di ciascun carattere, minuscolo o maiuscolo.
+- Nella voce “PIN” digita il codice PIN dell’utente inserito precedentemente.
+Una volta compilati tutti i campi della videata di configurazione della app MyNice World, premi la voce “Avvia” sul display della centrale MyNice. Appena la barra di stato inizia il caricamento, premi il tasto ok della app.
+La centrale confermerà l’avvenuta associazione con un segnale acustico. In seguito nel display dello smartphone apparirà un popup che comunica lo stato di manutenzione.
+In corrispondenza della voce “Utente richiedente autenticazione” apparirà il nome dell’utente abilitato.
+Lo smartphone è stato correttamente associato.
+
+Come collegare il tamper antiesportazione alla centrale MyNice?
+In questo video si forniscono le indicazioni per collegare il tamper antiesportazione alla centrale di allarme MyNice.
