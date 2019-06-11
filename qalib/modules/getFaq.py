@@ -16,21 +16,17 @@ def get_FAQ(filename, origin_filename):
 
         questions = p.get_tokens(questions)
 
-        original_tokens = []
-        for q in questions:
-            original_tokens += q
-
         words = list(set([token.lemma for question in questions for token in question]))
 
-        np.save(filename, [questions, words, original_tokens])
+        np.save(filename, [questions, words])
 
-        return questions, words, original_tokens
+        return questions, words
 
     else:
 
-        questions, words, original_tokens = np.load(filename).tolist()
+        questions, words = np.load(filename).tolist()
 
-        return questions, words, original_tokens
+        return questions, words
 
 
 def get_syn(path, words, language):
@@ -105,7 +101,7 @@ def extract_words(id_device, questions, filename, vocab, word_index, originals, 
                 position = np.argmax(values)
 
                 if values[position] > 0.8:
-                    save_question.append(originals_reverse_index[position])
+                    save_question.append((originals_reverse_index[position], token.depth))
 
                 # print(token.lemma, originals_reverse_index[position], values[position])
 
@@ -113,24 +109,11 @@ def extract_words(id_device, questions, filename, vocab, word_index, originals, 
 
     if save:
         with open(filename, 'w') as file:
-            file.write('\n'.join('::'.join(q) for q in save_questions))
+            file.write('\n'.join(['::'.join([t[0] + ":" + str(t[1]) for t in q]) for q in save_questions]))
 
         # print('\n'.join(' '.join(q) for q in save_questions))
 
     return save_questions
-
-
-def get_extracted(exs, original_tokens):
-    extracted = []
-    for ex in exs:
-        sub_exs = []
-        for sub_ex in ex:
-            for t in original_tokens:
-                if t.lemma == sub_ex:
-                    sub_exs.append(t)
-                    break
-        extracted.append(sub_exs)
-    return extracted
 
 
 def get_question_matrix(filename, questions, tags):
@@ -144,8 +127,8 @@ def get_question_matrix(filename, questions, tags):
         questions_matrix = np.zeros((len(questions), len(tags)))
         for i, question in enumerate(questions):
             for token in question:
-                j = index[token.lemma]
-                questions_matrix[i, j] = token.depth
+                j = index[token[0]]  # token.lemma
+                questions_matrix[i, j] = token[1]  # token.depth
         np.save(filename, questions_matrix)
 
     return index, questions_matrix
@@ -157,8 +140,8 @@ def cos_sim(filename, extracted, questions, tags):
 
     token_matrix = np.zeros((1, len(tags)))
     for token in extracted:
-        j = index[token.lemma]
-        token_matrix[0, j] = token.depth
+        j = index[token[0]]  # token.lemma
+        token_matrix[0, j] = token[1]  # token.depth
 
     values = cs(token_matrix, questions_matrix)[0]
 
@@ -178,7 +161,7 @@ def findFAQ(id_device, user_question=None, language="it", training=False):
 
     p.init(language)
 
-    questions, words, original_tokens = get_FAQ("qalib/utils/{}/data_faq.npy".format(id_device), "qalib/utils/{}/nice_faq".format(id_device))
+    questions, words = get_FAQ("qalib/utils/{}/data_faq.npy".format(id_device), "qalib/utils/{}/nice_faq".format(id_device))
 
     syn = get_syn("qalib/utils/{}/syns".format(id_device), words, language)
 
@@ -195,21 +178,20 @@ def findFAQ(id_device, user_question=None, language="it", training=False):
     originals_index = dict((w, c) for c, w in enumerate(originals))
     originals_reverse_index = dict((c, w) for c, w in enumerate(originals))
 
+    extracted_originals = None
     if training:
         questions = p.load_preprocessed_questions("qalib/utils/{}/nice_faq".format(id_device))
-        extract_words(id_device, questions, "qalib/utils/{}/faq_tag".format(id_device), vocab, word_index, originals, originals_reverse_index, save=True)
+        extracted_originals = extract_words(id_device, questions, "qalib/utils/{}/faq_tag".format(id_device), vocab, word_index, originals, originals_reverse_index, save=True)
         # exit()
-
-    exs_originals = p.load_extracted("qalib/utils/{}/faq_tag".format(id_device))
-    extracted_originals = get_extracted(exs_originals, original_tokens)
+    else:
+        extracted_originals = p.load_extracted("qalib/utils/{}/faq_tag".format(id_device))
 
     if training:
         get_question_matrix("qalib/utils/{}/question_matrix.npy".format(id_device), extracted_originals, originals)
         return
 
     new_questions = [user_question]
-    exs = extract_words(id_device, new_questions, "", vocab, word_index, originals, originals_reverse_index, save=False)
-    extracted = get_extracted(exs, original_tokens)[0]
+    extracted = extract_words(id_device, new_questions, "", vocab, word_index, originals, originals_reverse_index, save=False)[0]
 
     value, index = cos_sim("qalib/utils/{}/question_matrix.npy".format(id_device), extracted, extracted_originals, originals)
 

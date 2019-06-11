@@ -3,6 +3,8 @@ import tensorflow as tf
 
 def train(input, output, model_dir):
 
+    tf.reset_default_graph()
+
     epochs = 10000
 
     rows = input.shape[0]

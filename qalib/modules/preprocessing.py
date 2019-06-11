@@ -269,5 +269,5 @@ def load_extracted(filename):
         lines = file.read().splitlines()
     extracted = []
     for line in lines:
-        extracted.append(line.split("::"))
+        extracted.append((token.split(':')[0], int(token.split(':')[1])) for token in line.split("::"))
     return extracted
